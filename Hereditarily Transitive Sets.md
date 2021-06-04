@@ -1,15 +1,49 @@
 % Hereditarily Transitive Sets
 % Sébastien Boisgérault, MINES ParisTech
 
+### Notations 
+
+  - The symbol $\varnothing$ denotes the empty set $\{\;\}$: $\forall x, \, x \not \in\varnothing$.
+
+  - We use the ellipsis "$\dots$" to signify that a set may have more elements 
+    than those explicitly listed : a "set with ellipsis" should 
+    be interpreted as any superset of "the same set without ellipsis". 
+    So we have for example
+    $$
+    \{x\} \subset \{x, \dots\}, \; \{x, y\} \subset \{x, y, \dots\}, \;
+    \{x \;| \; x \in y\} \subset \{x, \dots \; | \; x \in y\},
+    $$
+    and the corresponding interpretation of equality
+    $$
+    z = \{x, \dots \} \; \longleftrightarrow \; \{x\} \subset z \; \longleftrightarrow \; x \in z,
+    $$
+    $$
+    z = \{x, y, \dots \} \; \longleftrightarrow \; \{x, y\} \subset z \; \longleftrightarrow \; x \in z \wedge y \in z,
+    $$
+    $$
+    z = \{x, \dots \; | \; x \in y\} \; \longleftrightarrow \; \{x \; | \; x \in y\} \subset z \; \longleftrightarrow \; y \subset z.
+    $$
+
+
+
+### Transitive sets
+
 A set $z$ is *transitive* if 
-
-$\forall x \, \forall y \, (x\in y \wedge y\in z) \rightarrow x \in z$
-
-
-Most syntactically convenient version:
+$$
+\forall x \, \forall y \, (x\in y \wedge y\in z) \rightarrow x \in z.
+$$
+We can use the abbreviation $x \in y \in z$ to denote 
+$x\in y \wedge y\in z$ and make implicit the universal quantifiers $\forall x$
+and $\forall y$ ; we then end up with the simple
 $$
 x \in y \in z \rightarrow x \in z.
 $$
+With ellipses, the transitivity of $z$ reads:
+$$
+z = \{\{x,\dots\},\dots \} \rightarrow z = \{x, \{x,\dots\}, \dots\}.
+$$
+
+### Hereditarily transitive sets
 
 
 ### Axiom of foundation
