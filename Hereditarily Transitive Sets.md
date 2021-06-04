@@ -38,12 +38,40 @@ and $\forall y$ ; we then end up with the simple
 $$
 x \in y \in z \rightarrow x \in z.
 $$
+This property appears very similar to the concept of transitivity used in order theory: 
+remember that if $x$, $y$ and $z$ are elements of a set $X$ with a strict order $<$, 
+transitivity of this order means:
+$$
+x < y < z \rightarrow x < z.
+$$
 With ellipses, the transitivity of $z$ reads:
 $$
 z = \{\{x,\dots\},\dots \} \rightarrow z = \{x, \{x,\dots\}, \dots\}.
 $$
 
 ### Hereditarily transitive sets
+
+A set $x_0$ is hereditarily transitive if it is transitive, all its elements are
+transitive, all the elements of its elements are transitive, and so on, 
+"all the way down". In other words, if for any integer $n$, 
+$$
+x_{n} \in x_{n-1} \in x_{n-2} \in \dots \in x_0
+\; \rightarrow \;
+x_{n} \in x_{n-2}.
+$$
+Note that if $x_n \in x_{n-1} \in x_{n-2} \in \dots \in x_0$, 
+we also have $x_n \in x_{n-2} \in x_{n-3} \in \dots \in x_0$ and thus
+$x_{n} \in x_{n-3}$. More generally, by induction
+$$
+x_{n} \in x_{n-1} \in x_{n-2} \in \dots \in x_0
+\; \rightarrow \;
+x_{n} \in x_{n-1} \wedge x_{n} \in x_{n-2} \wedge \dots \wedge x_n \in x_0.
+$$
+
+
+**TODO:** 2-level characterization.
+
+**TODO:** formulation with ellipses.
 
 
 ### Axiom of foundation
@@ -68,7 +96,7 @@ one can visualize a non-empty set $x$ as a collection of generic $y$'s;
 the axiom simply asserts that one of these $y$'s
 can be expanded into $z$'s such that 
 $$
-x = \{\dots, y\dots, \{\dots, z,\dots\},\dots\}
+x = \{y,\{z,\dots\},\dots\}
 \, \rightarrow \,
 y \neq z.
 $$
@@ -89,7 +117,7 @@ but $y$ is the unique element of $\{y\}$, thus $y \cap \{y\} = \varnothing$
 or equivalently, $y\not \in y$. Alternatively, the same conclusion can be drawn 
 -- arguably more easily -- from the statement:
 $$
-x = \{y\} = \{\{\dots, z, \dots\}\} \rightarrow y \neq z.
+x = \{y\} = \{\{z, \dots\}\} \rightarrow y \neq z.
 $$
 
 Additionally, if $x$ is a hereditarily transitive set, the relation $\in$ on $x$
