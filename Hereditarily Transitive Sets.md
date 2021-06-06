@@ -74,7 +74,7 @@ $$
 **TODO:** formulation with ellipses.
 
 
-### Axiom of foundation
+## Axiom of foundation {#axiom-foundation}
 
 The axiom of foundation is usually formulated as
 \begin{equation}
@@ -159,3 +159,71 @@ The axiom of foundation can then be re-stated as
 **Axiom of foundation.** Every non-empty set $x$ has a $\in$-minimal element.
 
 **TODO.** find reference where this version of the axiom of foundation is used (Jech ?)
+
+
+## Hereditarily sets and ordinals
+
+We say that the sets $x$ and $y$ are *comparable* if $x \in y$, $x=y$ or 
+$y \in x$; otherwise, they are *incomparable*.
+
+#### Lemma -- Comparability lift {#comparability-lift}
+Two transitive sets $x$ and $y$ such that for 
+every $w \in x$, $w$ and $y$ are comparable and for every $z \in y$, $z$ and $x$ 
+are comparable, are comparable.
+
+**Proof.** Let $w\in x$; since by assumption $w$ and $y$ are comparable, 
+$w \in y$, $w=y$ or $y \in w$. If $w=y$ then $y \in x$ ; if $y \in w$, 
+since $w \in x$ and $x$ is transitive, we also have $y\in x$. 
+In each of these two cases, $x$ and $y$ are comparable as expected. 
+Otherwise, for every $w \in x$, we have $w \in y$, that is $x \subseteq y$.
+
+Similarly, we can infer that either $x$ and $y$ are comparable or for every 
+$z \in y$, $z \in y$, and hence $y \subseteq z$.
+In this latter case, since $x \subseteq y$ and $y \subseteq x$, we end up with 
+$x=y$; in any case, $x$ and $y$ are comparable. $\blacksquare$
+
+This lemma unlocks the following theorem:
+
+**Theorem.** Membership orders linearly any hereditarily transitive set. 
+
+**Proof.** We have already demonstrated in the ["axiom of foundation" section](#axiom-foundation) that membership if a (possibly partial) strict order in any hereditarily transitive
+set $t$. 
+
+We now prove that the order is total. Let's assume the opposite;
+thus, the set of elements of that is incomparable with at least another
+element of $z$ is not empty. Let $x$ be a $\in$-minimal element of this subset and 
+let $y$ be a $\in$-minimal element of
+the (also non-empty) subset of elements that cannot be compared to $x$.
+By minimality of $x$, for every $w \in x$, $w$ is comparable to every element of 
+$t$, thus $w$ is comparable to $y$ as a special case. 
+By minimality of $y$, every $z \in y$ is also comparable with $x$. 
+Thus, by the ["comparability lift" lemma](#comparability-lift), $x$ and $y$
+are comparable and we have a contradiction.
+$\blacksquare$
+
+Remember the definition of a well-order:
+
+#### Well-order {#well-order}
+A *well-order* on a set is an order such that every non-empty subset has a
+least element: the strict order $<$ well-orders the set $x$ if
+$$
+\forall y \subset x, \, (y \neq \varnothing \rightarrow \exists x \in y, \, \forall z \in y, \; 
+x = z \vee x < z).
+$$
+
+Ordinals are often defined as a distinguished class of well-ordered sets.
+This definition totally makes sense if you believe that ordinals shall first and
+foremost meant represent well-ordered sets up to an isomorphism (the ordinal 
+associated to a well-order being its *order type*). In this approach:
+
+#### Ordinals {#ordinal}
+A set is an *ordinal* if it is well-ordered by membership and transitive.
+
+However, the theorem above leads to an alternate characterization:
+
+#### Theorem
+A set if an ordinal if and only if it is hereditarily transitive.
+
+**Proof.** **TODO** $\blacksquare$
+
+**TODO.** Properly acknowledge the contributions of <https://math.stackexchange.com/questions/1056927/showing-that-a-transitive-set-of-transitive-sets-is-an-ordinal>
