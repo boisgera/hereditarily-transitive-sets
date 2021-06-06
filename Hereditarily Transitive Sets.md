@@ -212,9 +212,11 @@ x = z \vee x < z).
 $$
 
 Ordinals are often defined as a distinguished class of well-ordered sets.
-This definition totally makes sense if you believe that ordinals shall first and
-foremost meant represent well-ordered sets up to an isomorphism (the ordinal 
-associated to a well-order being its *order type*). In this approach:
+This definition totally makes sense if you believe that ordinals shall 
+first and foremost be used as canonical versions of well-ordered sets 
+up to an isomorphism 
+(the unique ordinal associated to a well-order being its *order type*). 
+In this approach:
 
 #### Ordinals {#ordinal}
 A set is an *ordinal* if it is well-ordered by membership and transitive.
