@@ -39,7 +39,7 @@ $$
 x \in y \in z \rightarrow x \in z.
 $$
 This property appears very similar to the concept of transitivity used in order theory: 
-remember that if $x$, $y$ and $z$ are elements of a set $X$ with a strict order $<$, 
+remember that if $x$, $y$ and $z$ are elements of a set endowed with a strict order $<$, 
 transitivity of this order means:
 $$
 x < y < z \rightarrow x < z.
