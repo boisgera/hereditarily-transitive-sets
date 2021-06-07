@@ -93,7 +93,7 @@ Note that it is not necessary to explicitly check transitivity all the way down:
 
 **TODO.** emphasize "deepness" of the terminology but only apparent, compare
 with the situation for (simply) transitive, strees that we thus have an
-alternate definition:
+alternate (shallow) definition:
 
 #### Hereditarily transitive sets
 A set is hereditarily transitive if and only if it is transitive and 
