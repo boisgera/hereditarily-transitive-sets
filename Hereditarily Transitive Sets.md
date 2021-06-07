@@ -68,6 +68,8 @@ $$
 x_n \in x_{n-1} \in \dots \in x_0 = z \rightarrow x_n \in z.
 $$
 
+**TODO.** Transitivity and subsets
+
 ## Hereditarily transitive sets
 
 A set $z$ is hereditarily transitive if it is transitive, all its elements are
