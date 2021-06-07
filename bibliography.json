@@ -1,0 +1,41 @@
+[
+	{
+		"id": "Sco14",
+		"type": "book",
+		"note": "_eprint: https://math.stackexchange.com/q/1057102\nPublished: Mathematics Stack Exchange",
+		"title": "Showing that a Transitive Set of Transitive Sets is an Ordinal",
+		"URL": "https://math.stackexchange.com/q/1057102",
+    "issued": {
+      "date-parts": [
+              [
+                      "2014"
+              ]
+      ]
+     },
+		"author": [
+			{
+				"family": "Scott",
+				"given": "Brian M."
+			}
+		]
+	},
+    {
+            "id": "Jec03",
+            "type": "book",
+            "publisher": "Springer",
+            "title": "Set Theory: The Third Millennium Edition",
+            "author": [
+                    {
+                            "family": "Jech",
+                            "given": "Thomas"
+                    }
+            ],
+            "issued": {
+                    "date-parts": [
+                            [
+                                    "2003"
+                            ]
+                    ]
+            }
+    }
+]

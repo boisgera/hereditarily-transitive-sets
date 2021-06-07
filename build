@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-pandoc -o "Hereditarily Transitive Sets.pdf" "Hereditarily Transitive Sets.md"
+pandoc --toc --bibliography=bibliography.json -o "Hereditarily Transitive Sets.pdf" \
+"Hereditarily Transitive Sets.md"
 

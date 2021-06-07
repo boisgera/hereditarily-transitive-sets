@@ -1,7 +1,7 @@
 % Hereditarily Transitive Sets
 % Sébastien Boisgérault, MINES ParisTech
 
-### Notations 
+## Notations 
 
   - The symbol $\varnothing$ denotes the empty set $\{\;\}$: $\forall x, \, x \not \in\varnothing$.
 
@@ -26,7 +26,7 @@
 
 
 
-### Transitive sets
+## Transitive sets
 
 A set $z$ is *transitive* if 
 $$
@@ -44,18 +44,37 @@ transitivity of this order means:
 $$
 x < y < z \rightarrow x < z.
 $$
-With ellipses, the transitivity of $z$ reads:
+With ellipses, transitivity of $z$ reads:
 $$
-z = \{\{x,\dots\},\dots \} \rightarrow z = \{x, \{x,\dots\}, \dots\}.
+z = \{\{x,\dots\},\dots \} \rightarrow z = \{x, \dots\}.
+$$
+Note that the element of an element of an element of a transitive
+set is also an element of the transitive set since
+$$
+x \in y \in w \in z \rightarrow x \in y \in z \rightarrow x \in z.
+$$
+or alternatively
+$$
+z = \{\{\{x,\dots\},\,\dots\},\dots \} 
+\rightarrow z = \{\{x,\dots\},\dots \}
+\rightarrow  z = \{x, \dots\}.
+$$
+This property can be generalized by induction to any chain of membership that
+ends up in a transitive set $z$:
+
+#### Transitivity runs deep
+If $z$ is a transitive set then
+$$
+x_n \in x_{n-1} \in \dots \in x_0 = z \rightarrow x_n \in z.
 $$
 
-### Hereditarily transitive sets
+## Hereditarily transitive sets
 
-A set $x_0$ is hereditarily transitive if it is transitive, all its elements are
+A set $z$ is hereditarily transitive if it is transitive, all its elements are
 transitive, all the elements of its elements are transitive, and so on, 
 "all the way down". In other words, if for any integer $n$, 
 $$
-x_{n} \in x_{n-1} \in x_{n-2} \in \dots \in x_0
+x_{n} \in x_{n-1} \in x_{n-2} \in \dots \in x_0 = z
 \; \rightarrow \;
 x_{n} \in x_{n-2}.
 $$
@@ -68,10 +87,22 @@ x_{n} \in x_{n-1} \in x_{n-2} \in \dots \in x_0
 x_{n} \in x_{n-1} \wedge x_{n} \in x_{n-2} \wedge \dots \wedge x_n \in x_0.
 $$
 
+Note that it is not necessary to explicitly check transitivity all the way down:
 
-**TODO:** 2-level characterization.
+#### Hereditarily transitive sets
+A set is hereditarily transitive if and only if it is transitive and 
+its elements are transitive.
 
-**TODO:** formulation with ellipses.
+**Proof.** The "only if" part of the result is obvious. For the "if" part, 
+notice that if $z$ is transitive as well as its elements, then
+$x_2 \in x_1 \in x_0 = z$
+yields
+$x_2 \in x_0 = z,$
+thus $x_2$ is also transitive; by induction every $x_n$ such that 
+$$
+x_n \in x_{n-1} \in x_{n-2} \in \dots \in x_0 = z
+$$
+is actually transitive. $\blacksquare$
 
 
 ## Axiom of foundation {#axiom-foundation}
@@ -154,12 +185,10 @@ we will say that $y'\in x$ is $\in$-minimal in $x$ if
 $$
 \forall y \in x, \, y \not \in y'.
 $$ 
-The axiom of foundation can then be re-stated as
+The axiom of foundation can then be re-stated as (see e.g. @Jec03)
 
-**Axiom of foundation.** Every non-empty set $x$ has a $\in$-minimal element.
-
-**TODO.** find reference where this version of the axiom of foundation is used (Jech ?)
-
+#### Axiom of foundation 
+Every non-empty set $x$ has a $\in$-minimal element.
 
 ## Hereditarily sets and ordinals
 
@@ -167,9 +196,12 @@ We say that the sets $x$ and $y$ are *comparable* if $x \in y$, $x=y$ or
 $y \in x$; otherwise, they are *incomparable*.
 
 #### Lemma -- Comparability lift {#comparability-lift}
+
 Two transitive sets $x$ and $y$ such that for 
 every $w \in x$, $w$ and $y$ are comparable and for every $z \in y$, $z$ and $x$ 
 are comparable, are comparable.
+
+The following lemma and theorem are adapted from [@Sco14].
 
 **Proof.** Let $w\in x$; since by assumption $w$ and $y$ are comparable, 
 $w \in y$, $w=y$ or $y \in w$. If $w=y$ then $y \in x$ ; if $y \in w$, 
@@ -184,7 +216,8 @@ $x=y$; in any case, $x$ and $y$ are comparable. $\blacksquare$
 
 This lemma unlocks the following theorem:
 
-**Theorem.** Membership orders linearly any hereditarily transitive set. 
+### Theorem {#linear-order}
+Membership orders linearly any hereditarily transitive set. 
 
 **Proof.** We have already demonstrated in the ["axiom of foundation" section](#axiom-foundation) that membership if a (possibly partial) strict order in any hereditarily transitive
 set $t$. 
@@ -226,6 +259,17 @@ However, the theorem above leads to an alternate characterization:
 #### Theorem
 A set if an ordinal if and only if it is hereditarily transitive.
 
-**Proof.** **TODO** $\blacksquare$
+**Proof.** If the set $z$ is hereditarily transitive, then it is transitive.
+Additionally, since every non-empty subset of $z$ has a $\in$-minimal element
+by [the axiom of foundation](@axiom-foundation) and since [$\in$ is a linear
+order on $z$](#linear-order), every non-empty subset has a least element for
+$\in$. Hence $z$ is well-ordered and thus is an ordinal.
 
-**TODO.** Properly acknowledge the contributions of <https://math.stackexchange.com/questions/1056927/showing-that-a-transitive-set-of-transitive-sets-is-an-ordinal>
+To establish the converse result, we prove that elements of ordinals are 
+transitive sets. Let $z$ be an ordinal; if $w \in x \in y (\in z)$, 
+then $y\in z$, $x\in z$ and $w \in z$ by transitivity of $z$. 
+Since $\in$ (well-)orders $z$, it is transitive and $w \in y$. 
+Thus $y$ is a transitive set.
+
+
+## References
